@@ -6,8 +6,6 @@ public class UploadFileResponse {
 
     private String fileDownloadUri;
 
-    private String fileDeleteUri;
-
 
     private String fileType;
     private long size;
@@ -33,14 +31,6 @@ public class UploadFileResponse {
 
     public void setFileDownloadUri(String fileDownloadUri) {
         this.fileDownloadUri = fileDownloadUri;
-    }
-
-    public String getFileDeleteUri() {
-        return fileDeleteUri;
-    }
-
-    public void setFileDeleteUri(String fileDeleteUri) {
-        this.fileDeleteUri = fileDeleteUri;
     }
 
     public String getFileType() {

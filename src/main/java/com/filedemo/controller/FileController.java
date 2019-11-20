@@ -33,7 +33,6 @@ public class FileController {
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
-                .path("/deleteFile")
                 .path(fileName)
                 .toUriString();
 
@@ -74,6 +73,4 @@ public class FileController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
                 .body(resource);
     }
-
-
 }

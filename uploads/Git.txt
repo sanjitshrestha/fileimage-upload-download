@@ -1,0 +1,134 @@
+Initialization
+
+		$ git init
+=====================================
+Add origin
+
+		$ git remote add origin ""
+=====================================
+checking file added in index
+
+		$ git status
+=====================================
+Set email address
+
+		$git config user.email "email@example.com" - for one repository
+confirm:
+		$git config user.email
+
+
+------------------------------------------------------------------------------
+For reset to head:
+		$git reflog
+		$git reset --hard ba87201
+--------------------------------------------------------------
+Note: $git config --global user.email "email@example.com" - for every repository
+
+
+=======================================
+add untracked file into index
+
+		$ git add <fileName>   [eg. git add edu.txt]
+		$ git add -A (adding all untracked file into index)
+========================================
+commit changes on local repository
+
+		$ git commit -m "<comment>"
+		$ git commit -a -m "<comment>"
+========================================
+check history (log)
+
+		$ git log
+========================================
+pull origin data into local
+
+		$ git pull origin master
+========================================
+push local repository data into origin
+
+		$ git push -u origin master
+========================================
+creating new branch
+
+		$ git branch branch_name
+=========================================
+switching to new branch
+
+		$ git checkout <branch_name>
+================================================
+merge branch to master branch
+
+		$ git merge <branch_name>
+		$ git rebase <branch_name> [happens in linear way and all commit in first branch_name is reattached to head in the master]
+=================================================
+push local branch to origin
+
+		$ git push origin <branch_name> 
+==================================================
+information of file in respected branch
+
+		$ cat <file_name> [eg: cat edu.txt]
+=====================================================
+providing public ssh key for security in central repository
+
+		$ ssh-keygen
+======================================================
+for seeing public ssh key
+
+		$ cat <public_key_saved_location>  [public key-->shows in ssh-keygen commands]
+================================================================
+for ssh authetication
+
+		$ ssh -T git@github.com
+==================================================================
+for reverting file into previous version
+
+		$ git checkout <first_8_digit_hexadecimal_number_that_apper_in_git_log_commit> <file_name>
+
+
+
+
+
+
+
+
+
+===================================================================
+Delete Local Branch
+
+		$ git branch -d branch_name
+		$ git branch -D branch_name
+
+============================================
+Delete Remote Branch
+
+		$ git push origin --delete branch_name
+		$ git push origin :branch_name
+=============================================
+Delete all files
+
+		$ git rm -r *
+		$ git commit -m "comment"
+		$ git push origin master(for origin)
+
+======================================================
+(fetch-first) errror
+		$ git fetch origin master
+		$ git merge origin master
+=======================================================
+After to wrote this code I received other error: (non-fast-forward)
+
+I write this code:
+
+		$ git fetch origin master:tmp
+		$ git rebase tmp
+		$ git push origin HEAD:master
+		$ git branch -D tmp
+==============================================================
+
+Discarding all local commits on this branch
+
+ git reset --hard @{u}
+
+: -> wk
+
